@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Registration</h2>
+    <form action="" method="post">
+      <div class="input-box">
+        <input name='username' type="text" placeholder="Enter your name" required value="{{
+          request.form.username }}">
+      </div>
+      <div class="input-box">
+        <input name='fn' type="text" placeholder="Enter your First name" required value="{{
+          request.form.fn }}">
+      </div>
+      <div class="input-box">
+        <input name='ln' type="text" placeholder="Enter your Last name" required value="{{
+          request.form.ln }}">
+      </div>
+      <div class="input-box">
+        <input name='age' type="text" placeholder="Enter your age" required value="{{
+          request.form.age }}">
+      </div>
+      <div class="input-box">
+        <input name='gender' type="text" placeholder="Enter the Gender" required value="{{
+          request.form.gender }}">
+      </div>
+      <div class="input-box">
+        <input name='password' type="password" placeholder="Create password" required value="{{
+          request.form.password }}">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm password" required>
+      </div>
+      <div class="policy">
+        <input type="checkbox">
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button">
+        <input class="btn btn-default" type="Submit" value="Register Now">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="/login">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

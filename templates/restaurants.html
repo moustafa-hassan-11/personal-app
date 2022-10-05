@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <style>
+         table, th, td {
+            border: 1px solid black;
+         }
+    </style>	  
+    <title>Admin Console</title>
+    <h1 style="color:blue;text-align:center;"> User home </h1>
+    <h2 style="background-color:powderblue;"> List of the current restaurants:</h2>
+    <div class="text">
+        <h3>Would you like to logout <a href="/logout">Logout</a></h3>
+      </div>
+    <table>
+        <tr>
+           <th>Restaurant</th>
+           <th>Category</th>
+           <th>Review</th>
+        </tr>
+        <tr>
+        {% for record in restaurants %}
+	  <td>{{record[1]}}</td>
+	  <td>{{record[2]}}</td>
+	  <td>{{record[3]}}</td>
+        </tr>
+	{% endfor %}
+     </table>
+
+
+    
+    <h3  style="background-color:tomato;"> List of Current orders </h3>
+     <table>
+        <tr>
+           <th>Order Date</th>
+           <th>User</th>
+           <th>Order</th>
+	   <th>Restaurant</th>
+        </tr>
+	{% for order in orders %}
+        <tr>
+		<td>{{order[0]}}</td>
+		<td>{{order[1]}}</td>
+		<td>{{order[2]}}</td>
+                <td>{{order[3]}}</td>
+        </tr>
+	{% endfor %}
+     </table>
+  </head>
+<body>
+ <br>	
+ <br>
+
+
+  <div class="wrapper">
+   <form action="" method="post">
+     <label for="cars">Choose an administration action:</label>
+     <select id="action" name="actions">
+	 {% for name in rest %}    
+	 <option value="{{name[0]}}">{{name[0]}}</option>
+	 {% endfor %}
+     </select>
+      <label for="item">Add you order:</label>
+      <input type="text" style="width: 800px; placeholder="order" name="order" required value="{{
+          request.form.order }}">
+     <div class="input-box button">
+        <input class="btn btn-default" type="Submit" value="Proceed">
+     </div>
+   </form>
+
+</body>
+</html>
+

@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Admin Console</title>
+    <h1 style="color:blue;text-align:center;"> Management Console </h1>
+    <h2 style="background-color:powderblue;"> List of the current restaurants:</h2>
+    {% for rest in restaurants %}
+    <tr>
+	    <td style="font-family:courier;">{{rest[0]}}</td>
+	    <br>
+    </tr>
+    {% endfor %}
+
+
+    <h3  style="background-color:tomato;"> List of Current orders </h3>
+    {% for order in orders %}
+    <tr>
+            <td >{{order[0]}}</td>
+            <br>
+    </tr>
+    {% endfor %}
+  </head>
+<body>
+ <br>	
+ <br>
+ <div class="wrapper">
+   <form action="" method="post">
+     <label for="cars">Choose an administration action:</label>
+     <select id="action" name="actions">
+         <option value="read">Reading registered restaurants</option>
+         <option value="add">Adding a new restaurants in the system</option>
+         <option value="update">Updating data of a restaurant</option>
+	 <option value="delete">Removing an existing restaurant,Be careful when using this option</option><br>
+     </select> 	   
+     <div class="input-box button">
+        <input class="btn btn-default" type="Submit" value="Proceed">
+     </div>
+   </form>
+  </div>
+</body>
+</html>
+

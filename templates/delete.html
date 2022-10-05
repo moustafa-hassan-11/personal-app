@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<title> Registration or Sign Up form in HTML CSS | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Removing an existing restaurant</h2>
+    <h3>!!!Please Notice that Deleting the restaurant will lead to deleting all the orders assigned to it</h3>
+    <form action="" method="post">
+      <div class="input-box">
+	<label for="rest_name">Restaurant Name:</label><br>
+        <input name='rest_name' id="rest_name" type="text"  required value="{{
+          request.form.rest_name }}">
+      </div>
+      <div class="input-box button">
+        <input class="btn btn-default" type="Submit" value="Proceed">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+

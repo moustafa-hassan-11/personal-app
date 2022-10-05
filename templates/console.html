@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <style>
+         table, th, td {
+            border: 1px solid black;
+         }
+    </style>	  
+    <title>Admin Console</title>
+    <h1 style="color:blue;text-align:center;"> Management Console </h1>
+    <div class="text">
+        <h3>Would you like to logout <a href="/logout">Logout</a></h3>
+      </div>
+    <h2 style="background-color:powderblue;"> List of the current restaurants:</h2>
+    <table>
+        <tr>
+           <th>Restaurant</th>
+           <th>Category</th>
+           <th>Review</th>
+        </tr>
+        <tr>
+        {% for record in data %}
+	  <td>{{record[1]}}</td>
+	  <td>{{record[2]}}</td>
+	  <td>{{record[3]}}</td>
+        </tr>
+	{% endfor %}
+     </table>
+
+
+    
+    <h3  style="background-color:tomato;"> List of Current orders </h3>
+     <table>
+        <tr>
+           <th>Order Date</th>
+           <th>User</th>
+           <th>Order</th>
+	   <th>Restaurant</th>
+        </tr>
+	{% for order in order_view %}
+        <tr>
+		<td>{{order[0]}}</td>
+		<td>{{order[1]}}</td>
+		<td>{{order[2]}}</td>
+                <td>{{order[3]}}</td>
+        </tr>
+	{% endfor %}
+     </table>
+  </head>
+<body>
+ <br>	
+ <br>
+ <div class="wrapper">
+   <form action="" method="post">
+     <label for="cars">Choose an administration action:</label>
+     <select id="action" name="actions">
+         <option value="read">Reading registered restaurants</option>
+         <option value="add">Adding a new restaurants in the system</option>
+         <option value="update">Updating data of a restaurant</option>
+	 <option value="delete">Removing an existing restaurant,Be careful when using this option</option><br>
+     </select> 	   
+     <div class="input-box button">
+        <input class="btn btn-default" type="Submit" value="Proceed">
+     </div>
+   </form>
+  </div>
+</body>
+</html>
+
